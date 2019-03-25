@@ -25,6 +25,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hitesh_sahu.retailapp.R;
 import com.hitesh_sahu.retailapp.domain.helper.Connectivity;
@@ -86,6 +87,7 @@ public class ECartHomeActivity extends AppCompatActivity {
         checkOutAmount = (TextView) findViewById(R.id.checkout_amount);
         checkOutAmount.setSelected(true);
         checkOutAmount.setText(Money.rupees(checkoutAmount).toString());
+        Toast.makeText(this, ""+Money.rupees(checkoutAmount).toString(), Toast.LENGTH_SHORT).show();
         offerBanner.setSelected(true);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
@@ -139,7 +141,7 @@ public class ECartHomeActivity extends AppCompatActivity {
                     public void onClick(View v) {
 
                         Utils.vibrate(getApplicationContext());
-
+                        Toast.makeText(ECartHomeActivity.this, ""+checkOutAmount.getText().toString(), Toast.LENGTH_SHORT).show();
                         showPurchaseDialog();
 
                     }

@@ -35,8 +35,8 @@ public class SplashActivity extends FragmentActivity {
         setContentView(R.layout.activity_splash);
 
         logo = (ImageView) findViewById(R.id.logo_img);
-        appTitle = (TextView) findViewById(R.id.track_txt);
-        appSlogan = (TextView) findViewById(R.id.pro_txt);
+        //appTitle = (TextView) findViewById(R.id.track_txt);
+        //appSlogan = (TextView) findViewById(R.id.pro_txt);
 
         // Font path
         String fontPath = "font/CircleD_Font_by_CrazyForMusic.ttf";
@@ -44,8 +44,8 @@ public class SplashActivity extends FragmentActivity {
         Typeface tf = Typeface.createFromAsset(getAssets(), fontPath);
 
         // Applying font
-        appTitle.setTypeface(tf);
-        appSlogan.setTypeface(tf);
+       //// appTitle.setTypeface(tf);
+      //  appSlogan.setTypeface(tf);
 
         if (savedInstanceState == null) {
             flyIn();
@@ -63,20 +63,21 @@ public class SplashActivity extends FragmentActivity {
     private void flyIn() {
         animation = AnimationUtils.loadAnimation(this, R.anim.logo_animation);
         logo.startAnimation(animation);
-
+/*
         animation = AnimationUtils.loadAnimation(this,
                 R.anim.app_name_animation);
         appTitle.startAnimation(animation);
 
         animation = AnimationUtils.loadAnimation(this, R.anim.pro_animation);
         appSlogan.startAnimation(animation);
+        */
     }
 
     private void endSplash() {
         animation = AnimationUtils.loadAnimation(this,
                 R.anim.logo_animation_back);
         logo.startAnimation(animation);
-
+/*
         animation = AnimationUtils.loadAnimation(this,
                 R.anim.app_name_animation_back);
         appTitle.startAnimation(animation);
@@ -84,7 +85,7 @@ public class SplashActivity extends FragmentActivity {
         animation = AnimationUtils.loadAnimation(this,
                 R.anim.pro_animation_back);
         appSlogan.startAnimation(animation);
-
+*/
         animation.setAnimationListener(new AnimationListener() {
             @Override
             public void onAnimationEnd(Animation arg0) {
